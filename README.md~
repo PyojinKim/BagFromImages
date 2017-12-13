@@ -1,6 +1,6 @@
 # BagFromImages
 
-ROS package to generate a rosbag from a collection of images. Images are ordered alphabetically. The timestamp for each image is assigned according to the specified frequency.
+ROS package to generate a rosbag from a collection of images. Images are ordered alphabetically. The timestamp for each image is assigned according to the specified frequency. 
 
 The bag will publish the images to topic `/camera/image_raw`.
 
@@ -11,7 +11,7 @@ Tested in ROS Indigo 14.04 LTS.
 In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
 
     git clone https://github.com/raulmur/BagFromImages.git BagFromImages
-
+    
     cd BagFromImages
     mkdir build
     cd build
@@ -23,13 +23,16 @@ In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
 ## Usage:
 
     rosrun BagFromImages BagFromImages PATH_TO_IMAGES IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG
-
+  
  - `PATH_TO_IMAGES`: Path to the folder with the images
  - `IMAGE_EXTENSION`: .jpg, .png, etc. write the dot "."
  - `FREQUENCY`: Frames per second.
  - `PATH_TO_OUTPUT_BAG`: Path to save the bag (including the filename e.g. directory/filename.bag)
 
-## Usage (for stereo images):
+## Usage:
 
-    rosrun BagFromImages BagFromImages PATH_TO_LEFT PATH_TO_RIGHT IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG
+    rosrun BagFromImages BagFromImages PATH_TO_IMAGES IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG
     rosrun BagFromImages BagFromImages cam0/data_synthetic/ cam1/data_synthetic/ .png 20 data_synthetic.bag
+
+  
+
